@@ -14,16 +14,18 @@ public class Main {
 
         List list1 = new List();
         list1.add(1);
+        list1.add(2);
         list1.add(3);
-        list1.add(5);
         list1.add(7);
 
         List list2 = new List();
-        list2.add(3);
+        list2.add(1);
+        list2.add(4);
         list2.add(6);
 
         List list3 = new List();
         list3.jointList(list1, list2);
+        list3.printList();
 
 
     }

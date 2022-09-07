@@ -66,30 +66,40 @@ public class List {
 
     // I don't like this decision
     public void jointList(List list1, List list2) {
-        List joint = new List();
+
         Node temp1 = list1.head;
         Node temp2 = list2.head;
         while ((temp1 != null) || (temp2 != null)) {
+            Node newNode = new Node();
             if (temp2 == null) {
-                joint.add(temp1.value);
-                temp1 = temp1.next;
+                temp1 = addElement(temp1, newNode);
                 continue;
             }
             if (temp1 == null) {
-                joint.add(temp2.value);
-                temp2 = temp2.next;
+                temp2 = addElement(temp2, newNode);
                 continue;
             }
             if (temp1.value < temp2.value) {
-                joint.add(temp1.value);
-                temp1 = temp1.next;
+                temp1 = addElement(temp1, newNode);
                 continue;
             }
-            joint.add(temp2.value);
-            temp2 = temp2.next;
+            temp2 = addElement(temp2, newNode);
         }
-        joint.printList();
     }
+
+    private Node addElement(Node tempList, Node tempNew) {
+        tempNew.value = tempList.value;
+        if (head == null) {
+            head = tempNew;
+        } else {
+            tail.next = tempNew;
+        }
+        tail = tempNew;
+        tempList = tempList.next;
+        return tempList;
+    }
+
+
 
     private class Node {
         int value;
