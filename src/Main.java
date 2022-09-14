@@ -25,7 +25,21 @@ public class Main {
 
         List list3 = new List();
         list3.jointList(list1, list2);
-        list3.printList();
+        //list3.printList();
+
+        List list4 = new List();
+        list4.add(1);
+        list4.add(2);
+        list4.add(3);
+        list4.add(4);
+        list4.add(5);
+        list4.add(6);
+        list4.add(7);
+        list4.printList();
+        System.out.println();
+        list4.removeKElementFromTail(3);
+        list4.printList();
+
 
 
     }

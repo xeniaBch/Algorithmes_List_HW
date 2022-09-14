@@ -99,6 +99,25 @@ public class List {
         return tempList;
     }
 
+    public void removeKElementFromTail(int k) {
+        Node temp1 = head;
+        Node temp2 = head;
+
+        for(int counter = 0; temp1 != null; ++counter) {
+            if (counter >= k) {
+                if (temp1 == tail) {
+                    temp2.next = temp2.next.next;
+                    return;
+                }
+
+                temp2 = temp2.next;
+            }
+
+            temp1 = temp1.next;
+        }
+
+        head = head.next;
+    }
 
 
     private class Node {
